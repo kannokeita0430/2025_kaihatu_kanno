@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|c:\\users\\user\\desktop\\c#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_c#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|solutionrelative:2025_kaihatu_kanno\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Form1.cs",
+              "RelativeDocumentMoniker": "2025_kaihatu_kanno\\Form1.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "RelativeToolTip": "2025_kaihatu_kanno\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T01:11:55.015Z",
+              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
