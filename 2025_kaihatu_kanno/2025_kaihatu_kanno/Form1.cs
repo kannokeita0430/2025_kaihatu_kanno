@@ -53,13 +53,31 @@ namespace _2025_kaihatu_kanno
         {
             var (row, col) = ((int, int))((Button)sender).Tag;
             //置けない場所をクリックしたとき
-            
+
             if (!board.IsValidMove(row, col))
             {
                 MessageBox.Show("その場所には置けません！");
                 return;
             }
+            board.PlaceDisk(row, col);
+            UpdateBoardUI();
+        }
 
+        // 見た目更新
+        private void UpdateBoardUI()
+        {
+            for (int i = 0; i < Board.SIZE; i++)
+            {
+                for (int j = 0; j < Board.SIZE; j++)
+                {
+                    if (board.Cells[i, j] == '●')
+                        buttons[i, j].BackColor = Color.Black;
+                    else if (board.Cells[i, j] == '○')
+                        buttons[i, j].BackColor = Color.White;
+                    else
+                        buttons[i, j].BackColor = Color.Green;
+                }
+            }
 
         }
     }
