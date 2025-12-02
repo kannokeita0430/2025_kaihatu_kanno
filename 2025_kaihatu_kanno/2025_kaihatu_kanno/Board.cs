@@ -30,5 +30,21 @@ namespace _2025_kaihatu_kanno
             Cells[4, 3] = '●';
             Cells[4, 4] = '○';
         }
+
+
+        // 石が置けるか判定
+        public bool IsValidMove(int row, int col)
+        {
+            if (Cells[row, col] != '・') return false;
+
+            char opponent = (CurrentPlayer == '●') ? '○' : '●';
+
+            int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 };
+            int[] dy = { -1, 0, 1, -1, 1, -1, 0, 1 };
+
+
+            return false;
+        }
     }
+       
 }
