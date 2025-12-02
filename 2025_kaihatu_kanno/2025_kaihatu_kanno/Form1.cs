@@ -12,9 +12,6 @@ namespace _2025_kaihatu_kanno
 {
     public partial class Form1 : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
+      
     }
 }
