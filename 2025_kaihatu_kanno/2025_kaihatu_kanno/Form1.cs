@@ -25,8 +25,12 @@ namespace _2025_kaihatu_kanno
         {
             // サイズ
             this.ClientSize = new Size(420, 420);
+            
+            // そもそものボード
             CreateBoardUI();
-            // UpdateBoardUI();
+
+            // ボードの色とか
+            UpdateBoardUI();
         }
 
         // UIボタン生成
@@ -52,8 +56,8 @@ namespace _2025_kaihatu_kanno
         private void BoardButton_Click(object sender, EventArgs e)
         {
             var (row, col) = ((int, int))((Button)sender).Tag;
+            
             //置けない場所をクリックしたとき
-
             if (!board.IsValidMove(row, col))
             {
                 MessageBox.Show("その場所には置けません！");
