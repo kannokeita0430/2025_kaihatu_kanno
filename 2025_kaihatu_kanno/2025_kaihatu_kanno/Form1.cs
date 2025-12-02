@@ -14,7 +14,7 @@ namespace _2025_kaihatu_kanno
     {
         // Boardクラス使う
         Button[,] buttons = new Button[Board.SIZE, Board.SIZE];
-        Board board = new Board(); 
+        Board board = new Board();
 
         public Form1()
         {
@@ -25,7 +25,31 @@ namespace _2025_kaihatu_kanno
         {
             // サイズ
             this.ClientSize = new Size(420, 420);
-            
+            CreateBoardUI();
+
+        }
+
+        // UIボタン生成
+        private void CreateBoardUI()
+        {
+            int size = 50;
+            for (int i = 0; i < Board.SIZE; i++)
+            {
+                for (int j = 0; j < Board.SIZE; j++)
+                {
+                    Button btn = new Button();
+                    btn.Width = btn.Height = size;
+                    btn.Location = new Point(j * size, i * size);
+                    btn.Tag = (i, j);
+                    btn.Click += BoardButton_Click;
+                    this.Controls.Add(btn);
+                    buttons[i, j] = btn;
+                }
+            }
+        }
+        // ボタンクリック → 石を置く
+        private void BoardButton_Click(object sender, EventArgs e)
+        {
         }
     }
 }
