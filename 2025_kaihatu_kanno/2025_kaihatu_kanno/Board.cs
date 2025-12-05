@@ -11,7 +11,8 @@ namespace _2025_kaihatu_kanno
         // オセロの盤面８×８をつくる
         public const int SIZE = 8;
         public char[,] Cells = new char[SIZE, SIZE];
-        public char CurrentPlayer = '●';
+        // 一手目の色 黒 = ● 白 = ○
+        public char CurrentPlayer = '黒';
 
         public Board()
         {
@@ -25,10 +26,10 @@ namespace _2025_kaihatu_kanno
                 for (int j = 0; j < SIZE; j++)
                     Cells[i, j] = '・'; // 空白
             // 真ん中の初期位置に黒と白を配置
-            Cells[3, 3] = '○';
-            Cells[3, 4] = '●';
-            Cells[4, 3] = '●';
-            Cells[4, 4] = '○';
+            Cells[3, 3] = '白';
+            Cells[3, 4] = '黒';
+            Cells[4, 3] = '黒';
+            Cells[4, 4] = '白';
         }
 
 
@@ -37,7 +38,7 @@ namespace _2025_kaihatu_kanno
         {
             if (Cells[row, col] != '・') return false;
 
-            char opponent = (CurrentPlayer == '●') ? '○' : '●';
+            char opponent = (CurrentPlayer == '黒') ? '白' : '黒';
 
             int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 };
             int[] dy = { -1, 0, 1, -1, 1, -1, 0, 1 };
@@ -72,7 +73,7 @@ namespace _2025_kaihatu_kanno
         public void PlaceDisk(int row, int col)
         {
             Cells[row, col] = CurrentPlayer;
-            char opponent = (CurrentPlayer == '●') ? '○' : '●';
+            char opponent = (CurrentPlayer == '黒') ? '白' : '黒';
 
             int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 };
             int[] dy = { -1, 0, 1, -1, 1, -1, 0, 1 };
@@ -104,7 +105,7 @@ namespace _2025_kaihatu_kanno
             }
             
             // プレイヤー交代
-            CurrentPlayer = (CurrentPlayer == '●') ? '○' : '●'; 
+            CurrentPlayer = (CurrentPlayer == '黒') ? '白' : '黒'; 
         }
     }
        

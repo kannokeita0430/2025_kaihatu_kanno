@@ -52,17 +52,19 @@ namespace _2025_kaihatu_kanno
             }
         }
 
-        // ボタンクリック → 石を置く
+        // ボタンクリックで石を置く
         private void BoardButton_Click(object sender, EventArgs e)
         {
             var (row, col) = ((int, int))((Button)sender).Tag;
             
-            //置けない場所をクリックしたとき
-            if (!board.IsValidMove(row, col))
-            {
-                MessageBox.Show("その場所には置けません！");
-                return;
-            }
+            // //置けない場所をクリックしたとき
+            // if (!board.IsValidMove(row, col))
+            // {
+            //     MessageBox.Show("ここはおけないよ～ん");
+            //     return;
+            // }
+
+            // ボードを更新するところにいく
             board.PlaceDisk(row, col);
             UpdateBoardUI();
         }
@@ -74,9 +76,9 @@ namespace _2025_kaihatu_kanno
             {
                 for (int j = 0; j < Board.SIZE; j++)
                 {
-                    if (board.Cells[i, j] == '●')
+                    if (board.Cells[j, i] == '黒')
                         buttons[i, j].BackColor = Color.Black;
-                    else if (board.Cells[i, j] == '○')
+                    else if (board.Cells[j,i] == '白')
                         buttons[i, j].BackColor = Color.White;
                     else
                         buttons[i, j].BackColor = Color.Green;
