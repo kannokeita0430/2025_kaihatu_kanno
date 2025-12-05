@@ -24,7 +24,7 @@ namespace _2025_kaihatu_kanno
         private void Form1_Load(object sender, EventArgs e)
         {
             // 画面サイズ
-            this.ClientSize = new Size(650, 650);
+            this.ClientSize = new Size(650, 750);
             
             // そもそものボード
             CreateBoardUI();
@@ -65,13 +65,17 @@ namespace _2025_kaihatu_kanno
             }
         }
 
+        // 回数の定義？
+        int kaisu = 0;
+
         // ボタンクリックで石を置く
         private void BoardButton_Click(object sender, EventArgs e)
         {
+            // どのマスが押されたか特定
             var (row, col) = ((int, int))((Button)sender).Tag;
             
             //置けない場所をクリックしたとき
-            if (!board.IsValidMove(row, col))
+            if (!board.isihantei(row, col))
             {
                 MessageBox.Show("ここはおけないよ～ん");
                 return;
@@ -82,6 +86,22 @@ namespace _2025_kaihatu_kanno
 
             // ボタンの色変える
             UpdateBoardUI();
+
+            // 回数のカウント
+            kaisu = (kaisu + 1);
+
+            label3.Text = string.Format("{0}回目", kaisu);
+
+            // labelの文字(どっちの番か)を変える
+            if (kaisu % 2 == 1)
+            {
+                label1.Text = "白の番です";
+            }
+            else if (kaisu % 2 == 0)
+            {
+                label1.Text = "黒の番です";
+            }
+
         }
 
         // 見た目更新
@@ -97,25 +117,15 @@ namespace _2025_kaihatu_kanno
                         buttons[i, j].BackColor = Color.White;
                     else
                         buttons[i, j].BackColor = Color.Green;
-
-                    
                 }
             }
 
-            // for (int i = 0; i < Board.SIZE; i++)
-            // {
-            //     for (int j = 0; j < Board.SIZE; j++)
-            //     {
-            //         if (board.Cells[i, j] = Color.Green)
-            //             buttons[i, j].BackColor = Color.Black;
-            //         else if (board.Cells[i, j] == '白')
-            //             buttons[i, j].BackColor = Color.White;
-            //         else
-            //             buttons[i, j].BackColor = Color.Green;
-            //     }
-            // }
-
-
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        { }
+
+        private void label3_Click(object sender, EventArgs e)
+        { }
     }
 }

@@ -11,8 +11,9 @@ namespace _2025_kaihatu_kanno
         // オセロの盤面８×８をつくる
         public const int SIZE = 8;
         public char[,] Cells = new char[SIZE, SIZE];
+        
         // 一手目の色 黒 = ● 白 = ○
-        public char CurrentPlayer = '黒';
+        public char Player = '黒';
 
         public Board()
         {
@@ -23,22 +24,33 @@ namespace _2025_kaihatu_kanno
         public void InitializeBoard()
         {
             for (int i = 0; i < SIZE; i++)
+            {
                 for (int j = 0; j < SIZE; j++)
-                    Cells[i, j] = '・'; // 空白
-            // 真ん中の初期位置に黒と白を配置
-            Cells[3, 3] = '白';
-            Cells[3, 4] = '黒';
-            Cells[4, 3] = '黒';
-            Cells[4, 4] = '白';
+                {
+                    // 空白
+                    Cells[i, j] = '・'; 
+
+                    // 真ん中の初期位置に黒と白を配置
+                    Cells[3, 3] = '白';
+                    Cells[3, 4] = '黒';
+                    Cells[4, 3] = '黒';
+                    Cells[4, 4] = '白';
+                }
+            }
         }
 
 
         // 石が置けるか判定
-        public bool IsValidMove(int row, int col)
+        // row 横　col 縦
+        public bool isihantei(int row, int col)
         {
-            if (Cells[row, col] != '・') return false ;
+            // なくても動く困る
+            // if (Cells[row, col] != '・')
+            // {
+            //     return false;
+            // }
 
-            char opponent = (CurrentPlayer == '黒') ? '白' : '黒';
+            char opponent = (Player == '黒') ? '白' : '黒';
 
             int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 };
             int[] dy = { -1, 0, 1, -1, 1, -1, 0, 1 };
@@ -57,7 +69,7 @@ namespace _2025_kaihatu_kanno
                         x += dx[d];
                         y += dy[d];
                     }
-                    else if (hasOpponent && Cells[x, y] == CurrentPlayer)
+                    else if (hasOpponent && Cells[x, y] == Player)
                     {
                         return true;
                     }
@@ -72,8 +84,8 @@ namespace _2025_kaihatu_kanno
         // 石を置いてひっくり返す
         public void PlaceDisk(int row, int col)
         {
-            Cells[row, col] = CurrentPlayer;
-            char opponent = (CurrentPlayer == '黒') ? '白' : '黒';
+            Cells[row, col] = Player;
+            char opponent = (Player == '黒') ? '白' : '黒';
 
             int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 };
             int[] dy = { -1, 0, 1, -1, 1, -1, 0, 1 };
@@ -92,11 +104,11 @@ namespace _2025_kaihatu_kanno
                         x += dx[d];
                         y += dy[d];
                     }
-                    else if (Cells[x, y] == CurrentPlayer)
+                    else if (Cells[x, y] == Player)
                     {
                         foreach (var pos in toFlip)
                         {
-                            Cells[pos.Item1, pos.Item2] = CurrentPlayer;
+                            Cells[pos.Item1, pos.Item2] = Player;
                         }
                         break;
                     }
@@ -106,10 +118,8 @@ namespace _2025_kaihatu_kanno
             
 
 
-
-
             // プレイヤー交代
-            CurrentPlayer = (CurrentPlayer == '黒') ? '白' : '黒'; 
+            Player = (Player  == '黒') ? '白' : '黒'; 
         }
     }
        
