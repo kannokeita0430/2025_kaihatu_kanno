@@ -12,7 +12,7 @@ namespace _2025_kaihatu_kanno
 {
     public partial class Form1 : Form
     {
-        // Boardクラス使う
+        // 8*8のボタン配置
         Button[,] buttons = new Button[Board.SIZE, Board.SIZE];
         Board board = new Board();
 
@@ -23,8 +23,8 @@ namespace _2025_kaihatu_kanno
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // サイズ
-            this.ClientSize = new Size(420, 420);
+            // 画面サイズ
+            this.ClientSize = new Size(650, 650);
             
             // そもそものボード
             CreateBoardUI();
@@ -33,20 +33,33 @@ namespace _2025_kaihatu_kanno
             UpdateBoardUI();
         }
 
-        // UIボタン生成
+        // ボタン生成
         private void CreateBoardUI()
         {
-            int size = 50;
+            // ボタンのサイズ
+            int size = 80;
+
             for (int i = 0; i < Board.SIZE; i++)
             {
                 for (int j = 0; j < Board.SIZE; j++)
                 {
                     Button btn = new Button();
+                    
+                    // 縦横のサイズ
                     btn.Width = btn.Height = size;
+                    
+                    // 場所
                     btn.Location = new Point(j * size, i * size);
+
+                    // ボタンの位置を記録
                     btn.Tag = (i, j);
+
                     btn.Click += BoardButton_Click;
+                    
+                    // 画面に追加
                     this.Controls.Add(btn);
+                    
+                    // 配列に保持する
                     buttons[i, j] = btn;
                 }
             }
@@ -57,15 +70,17 @@ namespace _2025_kaihatu_kanno
         {
             var (row, col) = ((int, int))((Button)sender).Tag;
             
-            // //置けない場所をクリックしたとき
-            // if (!board.IsValidMove(row, col))
-            // {
-            //     MessageBox.Show("ここはおけないよ～ん");
-            //     return;
-            // }
+            //置けない場所をクリックしたとき
+            if (!board.IsValidMove(row, col))
+            {
+                MessageBox.Show("ここはおけないよ～ん");
+                return;
+            }
 
-            // ボードを更新するところにいく
+            // 石をひっくり返す
             board.PlaceDisk(row, col);
+
+            // ボタンの色変える
             UpdateBoardUI();
         }
 
@@ -76,14 +91,30 @@ namespace _2025_kaihatu_kanno
             {
                 for (int j = 0; j < Board.SIZE; j++)
                 {
-                    if (board.Cells[j, i] == '黒')
+                    if (board.Cells[i, j] == '黒')
                         buttons[i, j].BackColor = Color.Black;
-                    else if (board.Cells[j,i] == '白')
+                    else if (board.Cells[i, j] == '白')
                         buttons[i, j].BackColor = Color.White;
                     else
                         buttons[i, j].BackColor = Color.Green;
+
+                    
                 }
             }
+
+            // for (int i = 0; i < Board.SIZE; i++)
+            // {
+            //     for (int j = 0; j < Board.SIZE; j++)
+            //     {
+            //         if (board.Cells[i, j] = Color.Green)
+            //             buttons[i, j].BackColor = Color.Black;
+            //         else if (board.Cells[i, j] == '白')
+            //             buttons[i, j].BackColor = Color.White;
+            //         else
+            //             buttons[i, j].BackColor = Color.Green;
+            //     }
+            // }
+
 
         }
     }

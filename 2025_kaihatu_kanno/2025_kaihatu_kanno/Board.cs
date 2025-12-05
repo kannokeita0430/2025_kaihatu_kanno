@@ -36,7 +36,7 @@ namespace _2025_kaihatu_kanno
         // 石が置けるか判定
         public bool IsValidMove(int row, int col)
         {
-            if (Cells[row, col] != '・') return false;
+            if (Cells[row, col] != '・') return false ;
 
             char opponent = (CurrentPlayer == '黒') ? '白' : '黒';
 
@@ -104,6 +104,10 @@ namespace _2025_kaihatu_kanno
                 }
             }
             
+
+
+
+
             // プレイヤー交代
             CurrentPlayer = (CurrentPlayer == '黒') ? '白' : '黒'; 
         }
