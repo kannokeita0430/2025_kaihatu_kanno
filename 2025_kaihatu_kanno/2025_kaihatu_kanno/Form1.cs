@@ -24,7 +24,7 @@ namespace _2025_kaihatu_kanno
         private void Form1_Load(object sender, EventArgs e)
         {
             // 画面サイズ
-            this.ClientSize = new Size(650, 750);
+            this.ClientSize = new Size(800, 750);
             
             // そもそものボード
             CreateBoardUI();
@@ -123,10 +123,32 @@ namespace _2025_kaihatu_kanno
 
         }
 
+        // パス
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // 回数のカウント
+            kaisu = (kaisu + 1);
+
+            label2.Text = string.Format("{0}回目", kaisu);
+
+            // labelの文字(どっちの番か)を変える
+            if (kaisu % 2 == 1)
+            {
+                label1.Text = "白の番です";
+            }
+            else if (kaisu % 2 == 0)
+            {
+                label1.Text = "黒の番です";
+            }
+        }
+
+
         private void label1_Click(object sender, EventArgs e)
         { }
 
         private void label3_Click(object sender, EventArgs e)
         { }
+
+
     }
 }
