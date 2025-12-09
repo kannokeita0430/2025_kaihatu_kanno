@@ -115,8 +115,9 @@ namespace _2025_kaihatu_kanno
                         buttons[i, j].BackColor = Color.Black;
                     else if (board.Cells[i, j] == '白')
                         buttons[i, j].BackColor = Color.White;
+
                     else
-                        buttons[i, j].BackColor = Color.Green;
+                        buttons[i, j].BackColor = Color.Green;　//何も置かれていない空いているマス
                 }
             }
 
