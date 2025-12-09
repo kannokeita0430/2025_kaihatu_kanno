@@ -32,7 +32,7 @@ namespace _2025_kaihatu_kanno
             // ボードの色とか
             UpdateBoardUI();
         }
-
+        
         // ボタン生成
         private void CreateBoardUI()
         {
@@ -90,7 +90,7 @@ namespace _2025_kaihatu_kanno
             // 回数のカウント
             kaisu = (kaisu + 1);
 
-            label3.Text = string.Format("{0}回目", kaisu);
+            label2.Text = string.Format("{0}回目", kaisu);
 
             // labelの文字(どっちの番か)を変える
             if (kaisu % 2 == 1)

@@ -38,7 +38,7 @@ namespace _2025_kaihatu_kanno
                 }
             }
         }
-
+        
 
         // 石が置けるか判定
         // row 横　col 縦
