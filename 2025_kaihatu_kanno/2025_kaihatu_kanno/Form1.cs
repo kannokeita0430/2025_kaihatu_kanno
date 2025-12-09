@@ -65,7 +65,7 @@ namespace _2025_kaihatu_kanno
             }
         }
 
-        // 回数の定義？
+        // 回数
         int kaisu = 0;
 
         // ボタンクリックで石を置く

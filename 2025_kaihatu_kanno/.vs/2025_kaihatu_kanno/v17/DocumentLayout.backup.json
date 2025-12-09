@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|solutionrelative:2025_kaihatu_kanno\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|c:\\users\\user\\desktop\\c#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_c#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|solutionrelative:2025_kaihatu_kanno\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|solutionrelative:2025_kaihatu_kanno\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|solutionrelative:2025_kaihatu_kanno\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|solutionrelative:2025_kaihatu_kanno\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|c:\\users\\user\\desktop\\c#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_c#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD5B44A8-C5CA-4CE5-95A1-B04AF549C3D1}|2025_kaihatu_kanno\\2025_kaihatu_kanno.csproj|solutionrelative:2025_kaihatu_kanno\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,30 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "2025_kaihatu_kanno\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Form1.Designer.cs",
-              "RelativeToolTip": "2025_kaihatu_kanno\\Form1.Designer.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAiwCwAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-05T13:01:41.757Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Form1.cs",
               "RelativeDocumentMoniker": "2025_kaihatu_kanno\\Form1.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Form1.cs",
-              "RelativeToolTip": "2025_kaihatu_kanno\\Form1.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAACIAAAAIAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Form1.cs*",
+              "RelativeToolTip": "2025_kaihatu_kanno\\Form1.cs*",
+              "ViewState": "AgIAACEAAAAAAAAAAAAIwEMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T01:30:16.299Z",
               "EditorCaption": ""
@@ -60,21 +43,21 @@
               "Title": "Board.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Board.cs",
               "RelativeDocumentMoniker": "2025_kaihatu_kanno\\Board.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Board.cs",
-              "RelativeToolTip": "2025_kaihatu_kanno\\Board.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAIwCgAAAAIAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Board.cs*",
+              "RelativeToolTip": "2025_kaihatu_kanno\\Board.cs*",
+              "ViewState": "AgIAACcAAAAAAAAAAAAIwC4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T01:37:29.118Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Form1.cs",
               "RelativeDocumentMoniker": "2025_kaihatu_kanno\\Form1.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
-              "RelativeToolTip": "2025_kaihatu_kanno\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "ToolTip": "C:\\Users\\user\\Desktop\\C#1\u5E74\u3077\u308D\u3050\u3089\u3080\u30FC\\002_C#_\u8AB2\u984C\u5165\u308C\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\2025_kaihatu_kanno\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]*",
+              "RelativeToolTip": "2025_kaihatu_kanno\\Form1.cs [\u30C7\u30B6\u30A4\u30F3]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T01:11:55.015Z",
               "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
