@@ -126,6 +126,8 @@ namespace _2025_kaihatu_kanno
         // パス
         private void button1_Click(object sender, EventArgs e)
         {
+            Board board = new Board();
+
             // 回数のカウント
             kaisu = (kaisu + 1);
 
@@ -140,6 +142,9 @@ namespace _2025_kaihatu_kanno
             {
                 label1.Text = "黒の番です";
             }
+
+            // プレイヤー交代
+            board.Player = (board.Player == '黒') ? '白' : '黒';
         }
 
 

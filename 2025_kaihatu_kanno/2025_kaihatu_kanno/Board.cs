@@ -86,6 +86,7 @@ namespace _2025_kaihatu_kanno
         public void PlaceDisk(int row, int col)
         {
             Cells[row, col] = Player;
+            // Player 黒 = opponnet 白　逆の時はその逆
             char opponent = (Player == '黒') ? '白' : '黒';
 
             int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 };
