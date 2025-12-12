@@ -50,9 +50,9 @@ namespace _2025_kaihatu_kanno
                 return false;
             }
 
-
             char opponent = (Player == '黒') ? '白' : '黒';
 
+            // 押したところの上下左右斜めを見る？
             int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 };
             int[] dy = { -1, 0, 1, -1, 1, -1, 0, 1 };
 
