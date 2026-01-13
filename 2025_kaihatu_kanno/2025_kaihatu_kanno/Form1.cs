@@ -24,7 +24,7 @@ namespace _2025_kaihatu_kanno
         private void Form1_Load(object sender, EventArgs e)
         {
             // 画面サイズ
-            this.ClientSize = new Size(800, 750);
+            this.ClientSize = new Size(700, 700);
             
             // そもそものボード
             CreateBoardUI();
@@ -37,7 +37,7 @@ namespace _2025_kaihatu_kanno
         private void CreateBoardUI()
         {
             // ボタンのサイズ
-            int size = 80;
+            int size = 65;
 
             for (int i = 0; i < Board.SIZE; i++)
             {
