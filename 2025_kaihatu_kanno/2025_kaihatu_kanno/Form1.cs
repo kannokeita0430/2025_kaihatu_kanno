@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -109,6 +110,9 @@ namespace _2025_kaihatu_kanno
             // ラベルの文字変える
             label1.Text = board.Player == '黒' ? "黒の番です" : "白の番です";
 
+            // 個数を数える
+            label4.Text = string.Format("{0}", board.CountDisks());
+
             // 両方置けなければゲーム終了
             if (!board.CanPlaceAny('黒') && !board.CanPlaceAny('白'))
             {
@@ -171,6 +175,9 @@ namespace _2025_kaihatu_kanno
         { }
 
         private void Form1_Load_1(object sender, EventArgs e)
+        { }
+
+        public void label4_Click(object sender, EventArgs e)
         { }
     }
 }
