@@ -61,13 +61,10 @@
             // 
             // button1
             // 
-<<<<<<< HEAD
-            this.button1.Location = new System.Drawing.Point(941, 380);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-=======
+
             this.button1.Font = new System.Drawing.Font("MS UI Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button1.Location = new System.Drawing.Point(664, 258);
->>>>>>> origin/main
+
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(173, 246);
             this.button1.TabIndex = 3;
@@ -102,13 +99,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1307, 1050);
-=======
             this.ClientSize = new System.Drawing.Size(784, 711);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
->>>>>>> origin/main
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
