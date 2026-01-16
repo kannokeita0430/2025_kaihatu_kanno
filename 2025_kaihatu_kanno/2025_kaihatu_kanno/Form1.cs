@@ -114,11 +114,47 @@ namespace _2025_kaihatu_kanno
             if (!board.CanPlaceAny('黒') && !board.CanPlaceAny('白'))
             {
                 string result = board.JudgeWinner();
-                // ,MessageBoxButtons.RetryCancel
-                MessageBox.Show(result, "ゲーム終了");
+                // 
+                //MessageBox.Show(result, "ゲーム終了", MessageBoxButtons.RetryCancel);
+
+                if (!board.CanPlaceAny('黒') && !board.CanPlaceAny('白'))
+                {
+                    string doraemon = board.JudgeWinner();
+
+                    DialogResult dr = MessageBox.Show(
+                        result,
+                        "ゲーム終了",
+                        MessageBoxButtons.RetryCancel
+                    );
+
+                    if (dr == DialogResult.Retry)
+                    {
+                        RestartGame();
+                    }
+                }
+
+
             }
 
         }
+
+        private void RestartGame()
+        {
+            // 盤面と手番をリセット
+            board = new Board();
+
+            // 手数リセット
+            kaisu = 0;
+
+            // ラベル初期化
+            label1.Text = "黒の番です";
+            label2.Text = "0回目";
+            label3.Text = "";
+
+            // 画面更新
+            UpdateBoardUI();
+        }
+
 
         // 見た目更新
         private void UpdateBoardUI()
