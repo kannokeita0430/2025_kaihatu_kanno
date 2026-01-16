@@ -110,9 +110,6 @@ namespace _2025_kaihatu_kanno
             // ラベルの文字変える
             label1.Text = board.Player == '黒' ? "黒の番です" : "白の番です";
 
-            // 個数を数える
-            label4.Text = string.Format("{0}", board.CountDisks());
-
             // 両方置けなければゲーム終了
             if (!board.CanPlaceAny('黒') && !board.CanPlaceAny('白'))
             {
@@ -139,6 +136,10 @@ namespace _2025_kaihatu_kanno
                         buttons[i, j].BackColor = Color.Green;
                 }
             }
+
+            var (black, white) = board.CountDisks();
+            labelBlack.Text = $"黒 : {black}";
+            labelWhite.Text = $"白 : {white}";
 
         }
 
@@ -179,5 +180,10 @@ namespace _2025_kaihatu_kanno
 
         public void label4_Click(object sender, EventArgs e)
         { }
+
+        private void labelWhite_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

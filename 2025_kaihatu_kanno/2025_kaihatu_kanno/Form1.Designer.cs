@@ -32,7 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelBlack = new System.Windows.Forms.Label();
+            this.labelWhite = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -79,16 +80,27 @@
             this.label3.Text = "a";
             this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
-            // label4
+            // labelBlack
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("MS UI Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(671, 177);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 27);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "黒 : 白";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.labelBlack.AutoSize = true;
+            this.labelBlack.Font = new System.Drawing.Font("MS UI Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelBlack.Location = new System.Drawing.Point(671, 177);
+            this.labelBlack.Name = "labelBlack";
+            this.labelBlack.Size = new System.Drawing.Size(87, 27);
+            this.labelBlack.TabIndex = 5;
+            this.labelBlack.Text = "黒 : 白";
+            this.labelBlack.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // labelWhite
+            // 
+            this.labelWhite.AutoSize = true;
+            this.labelWhite.Font = new System.Drawing.Font("MS UI Gothic", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.labelWhite.Location = new System.Drawing.Point(676, 219);
+            this.labelWhite.Name = "labelWhite";
+            this.labelWhite.Size = new System.Drawing.Size(78, 27);
+            this.labelWhite.TabIndex = 6;
+            this.labelWhite.Text = "label4";
+            this.labelWhite.Click += new System.EventHandler(this.labelWhite_Click);
             // 
             // Form1
             // 
@@ -96,7 +108,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 711);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelWhite);
+            this.Controls.Add(this.labelBlack);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -115,7 +128,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelBlack;
+        private System.Windows.Forms.Label labelWhite;
     }
 }
 
