@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,8 +33,9 @@ namespace _2025_kaihatu_kanno
 
             // ボードの色とか
             UpdateBoardUI();
+
         }
-        
+
         // ボタン生成
         private void CreateBoardUI()
         {
@@ -77,9 +80,11 @@ namespace _2025_kaihatu_kanno
             //置けない場所をクリックしたとき
             if (!board.isihantei(row, col))
             {
-                MessageBox.Show("ここはおけないよ～ん");
+                label3.Text = "😂";
                 return;
             }
+
+            label3.Text = "";
 
             // 石をひっくり返す
             board.PlaceDisk(row, col);
@@ -93,13 +98,27 @@ namespace _2025_kaihatu_kanno
             label2.Text = string.Format("{0}回目", kaisu);
 
             // labelの文字(どっちの番か)を変える
-            if (kaisu % 2 == 1)
+            // if (kaisu % 2 == 1)
+            // {
+            //     label1.Text = "白の番です";
+            // }
+            // else if (kaisu % 2 == 0)
+            // {
+            //     label1.Text = "黒の番です";
+            // }
+
+            // ラベルの文字変える
+            label1.Text = board.Player == '黒' ? "黒の番です" : "白の番です";
+
+            // 個数を数える
+            label4.Text = string.Format("{0}", board.CountDisks());
+
+            // 両方置けなければゲーム終了
+            if (!board.CanPlaceAny('黒') && !board.CanPlaceAny('白'))
             {
-                label1.Text = "白の番です";
-            }
-            else if (kaisu % 2 == 0)
-            {
-                label1.Text = "黒の番です";
+                string result = board.JudgeWinner();
+                // ,MessageBoxButtons.RetryCancel
+                MessageBox.Show(result, "ゲーム終了");
             }
 
         }
@@ -115,9 +134,9 @@ namespace _2025_kaihatu_kanno
                         buttons[i, j].BackColor = Color.Black;
                     else if (board.Cells[i, j] == '白')
                         buttons[i, j].BackColor = Color.White;
-
                     else
-                        buttons[i, j].BackColor = Color.Green;　//何も置かれていない空いているマス
+                        //何も置かれていない空いているマス
+                        buttons[i, j].BackColor = Color.Green;
                 }
             }
 
@@ -126,22 +145,25 @@ namespace _2025_kaihatu_kanno
         // パス
         private void button1_Click(object sender, EventArgs e)
         {
+            // プレイヤー交代
+            board.Player = (board.Player == '黒') ? '白' : '黒';
+
             // 回数のカウント
             kaisu = (kaisu + 1);
-
             label2.Text = string.Format("{0}回目", kaisu);
 
-            // labelの文字(どっちの番か)を変える
-            if (kaisu % 2 == 1)
-            {
-                label1.Text = "白の番です";
-            }
-            else if (kaisu % 2 == 0)
-            {
-                label1.Text = "黒の番です";
-            }
-        }
+            // ラベルの文字変える
+            label1.Text = board.Player == '黒' ? "黒の番です" : "白の番です";
 
+            // 両方置けなければゲーム終了
+            if (!board.CanPlaceAny('黒') && !board.CanPlaceAny('白'))
+            {
+                string result = board.JudgeWinner();
+                // , MessageBoxButtons.RetryCancel
+                MessageBox.Show(result, "ゲーム終了");
+            }
+
+        }
 
         private void label1_Click(object sender, EventArgs e)
         { }
@@ -149,6 +171,13 @@ namespace _2025_kaihatu_kanno
         private void label3_Click(object sender, EventArgs e)
         { }
 
+        private void label3_Click_1(object sender, EventArgs e)
+        { }
 
+        private void Form1_Load_1(object sender, EventArgs e)
+        { }
+
+        public void label4_Click(object sender, EventArgs e)
+        { }
     }
 }

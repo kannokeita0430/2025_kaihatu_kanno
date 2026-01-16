@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace _2025_kaihatu_kanno
 {
@@ -86,6 +88,7 @@ namespace _2025_kaihatu_kanno
         public void PlaceDisk(int row, int col)
         {
             Cells[row, col] = Player;
+            // Player 黒 = opponnet 白　逆の時はその逆
             char opponent = (Player == '黒') ? '白' : '黒';
 
             int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 };
@@ -116,12 +119,67 @@ namespace _2025_kaihatu_kanno
                     else break;
                 }
             }
-            
-
-
             // プレイヤー交代
             Player = (Player  == '黒') ? '白' : '黒'; 
         }
+
+
+        // 石の数を数える
+        public (int black, int white) CountDisks()
+        {
+            int black = 0;
+            int white = 0;
+
+            for (int i = 0; i < SIZE; i++)
+            {
+                for (int j = 0; j < SIZE; j++)
+                {
+                    if (Cells[i, j] == '黒') black++;
+                    else if (Cells[i, j] == '白') white++;
+                }
+            }
+            return (black, white);
+        }
+
+        // 指定したプレイヤーがどこかに置けるか
+        public bool CanPlaceAny(char player)
+        {
+            char current = Player;
+            Player = player;
+
+            for (int i = 0; i < SIZE; i++)
+            {
+                for (int j = 0; j < SIZE; j++)
+                {
+                    if (isihantei(i, j))
+                    {
+                        Player = current;
+                        return true;
+                    }
+                }
+            }
+
+            Player = current;
+            return false;
+        }
+
+
+        // 勝利判定
+        public string JudgeWinner()
+        {
+            var (black, white) = CountDisks();
+
+            if (black > white)
+                return $"黒の勝ち！ 黒:{black} 白:{white}";
+            else if (white > black)
+                return $"白の勝ち！ 黒:{black} 白:{white}";
+            else
+                return $"引き分け！ 黒:{black} 白:{white}";
+        }
+
+
+
+
     }
-       
+
 }
