@@ -85,7 +85,7 @@ namespace _2025_kaihatu_kanno
 
 
         // 石を置いてひっくり返す
-        public void PlaceDisk(int row, int col)
+        public void hikkurikaesu(int row, int col)
         {
             Cells[row, col] = Player;
             // Player 黒 = opponnet 白　逆の時はその逆
@@ -125,7 +125,7 @@ namespace _2025_kaihatu_kanno
 
 
         // 石の数を数える
-        public (int black, int white) CountDisks()
+        public (int black, int white) isiCount()
         {
             int black = 0;
             int white = 0;
@@ -142,7 +142,7 @@ namespace _2025_kaihatu_kanno
         }
 
         // 指定したプレイヤーがどこかに置けるか
-        public bool CanPlaceAny(char player)
+        public bool isiOkeruka(char player)
         {
             char current = Player;
             Player = player;
@@ -163,11 +163,10 @@ namespace _2025_kaihatu_kanno
             return false;
         }
 
-
         // 勝利判定
-        public string JudgeWinner()
+        public string Winner()
         {
-            var (black, white) = CountDisks();
+            var (black, white) = isiCount();
 
             if (black > white)
                 return $"黒の勝ち！ 黒:{black} 白:{white}";
@@ -176,9 +175,6 @@ namespace _2025_kaihatu_kanno
             else
                 return $"引き分け！ 黒:{black} 白:{white}";
         }
-
-
-
 
     }
 

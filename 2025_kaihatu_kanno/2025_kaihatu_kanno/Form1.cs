@@ -87,7 +87,7 @@ namespace _2025_kaihatu_kanno
             label3.Text = "";
 
             // 石をひっくり返す
-            board.PlaceDisk(row, col);
+            board.hikkurikaesu(row, col);
 
             // ボタンの色変える
             UpdateBoardUI();
@@ -97,64 +97,26 @@ namespace _2025_kaihatu_kanno
 
             label2.Text = string.Format("{0}回目", kaisu);
 
-            // labelの文字(どっちの番か)を変える
-            // if (kaisu % 2 == 1)
-            // {
-            //     label1.Text = "白の番です";
-            // }
-            // else if (kaisu % 2 == 0)
-            // {
-            //     label1.Text = "黒の番です";
-            // }
-
+            
             // ラベルの文字変える
             label1.Text = board.Player == '黒' ? "黒の番です" : "白の番です";
 
             // 両方置けなければゲーム終了
-            if (!board.CanPlaceAny('黒') && !board.CanPlaceAny('白'))
+            if (!board.isiOkeruka('黒') && !board.isiOkeruka('白'))
             {
-                string result = board.JudgeWinner();
-                // 
-                //MessageBox.Show(result, "ゲーム終了", MessageBoxButtons.RetryCancel);
+                string result = board.Winner();
 
-                if (!board.CanPlaceAny('黒') && !board.CanPlaceAny('白'))
+                DialogResult dr = MessageBox.
+                    Show(result, "ゲーム終了", MessageBoxButtons.RetryCancel);
+
+                if (dr == DialogResult.Retry)
                 {
-                    string doraemon = board.JudgeWinner();
-
-                    DialogResult dr = MessageBox.Show(
-                        result,
-                        "ゲーム終了",
-                        MessageBoxButtons.RetryCancel
-                    );
-
-                    if (dr == DialogResult.Retry)
-                    {
-                        RestartGame();
-                    }
+                    GameRestart();
                 }
-
 
             }
 
         }
-
-        private void RestartGame()
-        {
-            // 盤面と手番をリセット
-            board = new Board();
-
-            // 手数リセット
-            kaisu = 0;
-
-            // ラベル初期化
-            label1.Text = "黒の番です";
-            label2.Text = "0回目";
-            label3.Text = "";
-
-            // 画面更新
-            UpdateBoardUI();
-        }
-
 
         // 見た目更新
         private void UpdateBoardUI()
@@ -173,7 +135,7 @@ namespace _2025_kaihatu_kanno
                 }
             }
 
-            var (black, white) = board.CountDisks();
+            var (black, white) = board.isiCount();
             labelBlack.Text = $"黒 : {black}";
             labelWhite.Text = $"白 : {white}";
 
@@ -193,14 +155,38 @@ namespace _2025_kaihatu_kanno
             label1.Text = board.Player == '黒' ? "黒の番です" : "白の番です";
 
             // 両方置けなければゲーム終了
-            if (!board.CanPlaceAny('黒') && !board.CanPlaceAny('白'))
+            if (!board.isiOkeruka('黒') && !board.isiOkeruka('白'))
             {
-                string result = board.JudgeWinner();
-                // , MessageBoxButtons.RetryCancel
-                MessageBox.Show(result, "ゲーム終了");
-            }
+                string result = board.Winner();
 
+                DialogResult dr = MessageBox.
+                    Show(result, "ゲーム終了", MessageBoxButtons.RetryCancel);
+
+                if (dr == DialogResult.Retry)
+                {
+                    GameRestart();
+                }
+
+            }
         }
+
+        private void GameRestart()
+        {
+            // 盤面と手番をリセット
+            board = new Board();
+
+            // 手数リセット
+            kaisu = 0;
+
+            // ラベル初期化
+            label1.Text = "黒の番です";
+            label2.Text = "0回目";
+            label3.Text = "";
+
+            // 画面更新
+            UpdateBoardUI();
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         { }
