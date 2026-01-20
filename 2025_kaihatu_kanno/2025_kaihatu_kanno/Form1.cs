@@ -106,10 +106,10 @@ namespace _2025_kaihatu_kanno
             {
                 string result = board.Winner();
 
-                DialogResult dr = MessageBox.
+                DialogResult dialogResult = MessageBox.
                     Show(result, "ゲーム終了", MessageBoxButtons.RetryCancel);
 
-                if (dr == DialogResult.Retry)
+                if (dialogResult == DialogResult.Retry)
                 {
                     GameRestart();
                 }

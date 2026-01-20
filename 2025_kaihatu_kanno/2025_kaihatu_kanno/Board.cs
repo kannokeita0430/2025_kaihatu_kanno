@@ -47,10 +47,10 @@ namespace _2025_kaihatu_kanno
         public bool isihantei(int row, int col)
         {
             
-            if (Cells[row, col] != '・')
-            {
-                return false;
-            }
+            // if (Cells[row, col] != '・')
+            // {
+            //     return false;
+            // }
 
             char opponent = (Player == '黒') ? '白' : '黒';
 
