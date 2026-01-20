@@ -40,45 +40,50 @@ namespace _2025_kaihatu_kanno
                 }
             }
         }
-        
 
-        // 石が置けるか判定
-        // row 横　col 縦
+        // 石が置けるか判定　　row 横　col 縦
         public bool isihantei(int row, int col)
         {
-            
-            // if (Cells[row, col] != '・')
-            // {
-            //     return false;
-            // }
+            // 置いたところに置けないように
+            if (Cells[row, col] != '・')
+            {
+                return false;
+            }
 
-            char opponent = (Player == '黒') ? '白' : '黒';
+            char aiteNoisi = (Player == '黒') ? '白' : '黒';
 
-            // 押したところの上下左右斜めを見る？
+           // 押したところの上下左右斜めを見る
             int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 };
             int[] dy = { -1, 0, 1, -1, 1, -1, 0, 1 };
-
+                
+            // 一個ずつ増やしてみる
             for (int d = 0; d < 8; d++)
             {
+
+                // 挟めるか
                 int x = row + dx[d];
                 int y = col + dy[d];
-                bool hasOpponent = false;
+                bool isiHasamu = false;
 
+                // 盤面の中で全部見る
                 while (x >= 0 && x < SIZE && y >= 0 && y < SIZE)
                 {
-                    if (Cells[x, y] == opponent)
+                    // 相手の意思だったらきろく
+                    if (Cells[x, y] == aiteNoisi)
                     {
-                        hasOpponent = true;
+                        isiHasamu = true;
                         x += dx[d];
                         y += dy[d];
                     }
-                    else if (hasOpponent && Cells[x, y] == Player)
+                    // 自分の石だったらおけ
+                    else if (isiHasamu && Cells[x, y] == Player)
                     {
                         return true;
                     }
                     else break;
                 }
             }
+            // 全部だめだった
             return false;
 
         }
@@ -88,8 +93,10 @@ namespace _2025_kaihatu_kanno
         public void hikkurikaesu(int row, int col)
         {
             Cells[row, col] = Player;
-            // Player 黒 = opponnet 白　逆の時はその逆
-            char opponent = (Player == '黒') ? '白' : '黒';
+
+            // Player 黒 = aiteNoisi 白　逆の時はその逆
+            //黒だったら白を、白だったら黒をひっくり返す
+            char aiteNoisi = (Player == '黒') ? '白' : '黒';
 
             int[] dx = { -1, -1, -1, 0, 0, 1, 1, 1 };
             int[] dy = { -1, 0, 1, -1, 1, -1, 0, 1 };
@@ -98,19 +105,23 @@ namespace _2025_kaihatu_kanno
             {
                 int x = row + dx[d];
                 int y = col + dy[d];
-                var toFlip = new List<(int, int)>();
+                // 後でひっくり返す予定をきろく
+                var atodekaeru = new List<(int, int)>();
 
                 while (x >= 0 && x < SIZE && y >= 0 && y < SIZE)
                 {
-                    if (Cells[x, y] == opponent)
+                    if (Cells[x, y] == aiteNoisi)
                     {
-                        toFlip.Add((x, y));
+                        // 後で変える候補
+                        atodekaeru.Add((x, y));
                         x += dx[d];
                         y += dy[d];
                     }
+                    // 自分の意思
                     else if (Cells[x, y] == Player)
                     {
-                        foreach (var pos in toFlip)
+                        // 全部ひっくり返っす
+                        foreach (var pos in atodekaeru)
                         {
                             Cells[pos.Item1, pos.Item2] = Player;
                         }
@@ -141,16 +152,19 @@ namespace _2025_kaihatu_kanno
             return (black, white);
         }
 
-        // 指定したプレイヤーがどこかに置けるか
+        // 指定したプレイヤーがどこ かに置けるか
         public bool isiOkeruka(char player)
         {
+            // 手番保存
             char current = Player;
+            // 一瞬交代
             Player = player;
 
             for (int i = 0; i < SIZE; i++)
             {
                 for (int j = 0; j < SIZE; j++)
                 {
+                    // 置ける場所がある
                     if (isihantei(i, j))
                     {
                         Player = current;

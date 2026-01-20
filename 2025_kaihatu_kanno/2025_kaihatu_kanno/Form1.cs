@@ -118,7 +118,7 @@ namespace _2025_kaihatu_kanno
 
         }
 
-        // 見た目更新
+        // 押したとこの見た目更新
         private void UpdateBoardUI()
         {
             for (int i = 0; i < Board.SIZE; i++)
@@ -130,15 +130,14 @@ namespace _2025_kaihatu_kanno
                     else if (board.Cells[i, j] == '白')
                         buttons[i, j].BackColor = Color.White;
                     else
-                        //何も置かれていない空いているマス
                         buttons[i, j].BackColor = Color.Green;
                 }
             }
 
+            // それぞれの個数を表示
             var (black, white) = board.isiCount();
             labelBlack.Text = $"黒 : {black}";
             labelWhite.Text = $"白 : {white}";
-
         }
 
         // パス
@@ -159,10 +158,11 @@ namespace _2025_kaihatu_kanno
             {
                 string result = board.Winner();
 
-                DialogResult dr = MessageBox.
+                DialogResult dialogResult = MessageBox.
                     Show(result, "ゲーム終了", MessageBoxButtons.RetryCancel);
-
-                if (dr == DialogResult.Retry)
+                
+                // 「再試行」押したときにリセットする
+                if (dialogResult == DialogResult.Retry)
                 {
                     GameRestart();
                 }
@@ -170,12 +170,13 @@ namespace _2025_kaihatu_kanno
             }
         }
 
+        // ゲームリセット
         private void GameRestart()
         {
-            // 盤面と手番をリセット
+            // 盤面と手番のリセット
             board = new Board();
 
-            // 手数リセット
+            // 回数リセット
             kaisu = 0;
 
             // ラベル初期化
