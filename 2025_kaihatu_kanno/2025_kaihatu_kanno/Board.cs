@@ -50,6 +50,7 @@ namespace _2025_kaihatu_kanno
                 return false;
             }
 
+            // 三項演算子
             char aiteNoisi = (Player == '黒') ? '白' : '黒';
 
            // 押したところの上下左右斜めを見る
@@ -92,6 +93,8 @@ namespace _2025_kaihatu_kanno
         // 石を置いてひっくり返す
         public void hikkurikaesu(int row, int col)
         {
+
+
             Cells[row, col] = Player;
 
             // Player 黒 = aiteNoisi 白　逆の時はその逆
@@ -107,7 +110,7 @@ namespace _2025_kaihatu_kanno
                 int y = col + dy[d];
                 // 後でひっくり返す予定をきろく
                 var atodekaeru = new List<(int, int)>();
-
+                
                 while (x >= 0 && x < SIZE && y >= 0 && y < SIZE)
                 {
                     if (Cells[x, y] == aiteNoisi)

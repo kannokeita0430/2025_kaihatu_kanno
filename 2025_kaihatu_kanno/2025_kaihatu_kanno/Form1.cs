@@ -26,7 +26,7 @@ namespace _2025_kaihatu_kanno
         private void Form1_Load(object sender, EventArgs e)
         {
             // 画面サイズ
-            this.ClientSize = new Size(700, 700);
+            this.ClientSize = new Size(700, 650);
             
             // そもそものボード
             CreateBoardUI();
@@ -41,6 +41,8 @@ namespace _2025_kaihatu_kanno
         {
             // ボタンのサイズ
             int size = 65;
+
+            // Random Random = new Random();
 
             for (int i = 0; i < Board.SIZE; i++)
             {
@@ -57,6 +59,10 @@ namespace _2025_kaihatu_kanno
                     // ボタンの位置を記録
                     btn.Tag = (i, j);
 
+                    // ランダムな数字をおく
+                    // int num = Random.Next(-5, 15);
+                    // btn. Text = string .Format("{0}" ,num);
+
                     btn.Click += BoardButton_Click;
                     
                     // 画面に追加
@@ -70,6 +76,8 @@ namespace _2025_kaihatu_kanno
 
         // 回数
         int kaisu = 0;
+
+        // int tensu = 0;
 
         // ボタンクリックで石を置く
         private void BoardButton_Click(object sender, EventArgs e)
@@ -97,9 +105,26 @@ namespace _2025_kaihatu_kanno
 
             label2.Text = string.Format("{0}回目", kaisu);
 
-            
+            // ※消す
+            label4.Text = "";
+
             // ラベルの文字変える
             label1.Text = board.Player == '黒' ? "黒の番です" : "白の番です";
+
+            // // どっちか置けなかったらパス
+            // if (!board.isiOkeruka('黒') || !board.isiOkeruka('白'))
+            // {
+            //     // プレイヤー交代
+            //     board.Player = (board.Player == '黒') ? '白' : '黒';
+            // 
+            //     // 回数のカウント
+            //     kaisu = (kaisu + 1);
+            //     label2.Text = string.Format("{0}回目", kaisu);
+            // 
+            //     // ラベルの文字変える
+            //     label1.Text = board.Player == '黒' ? "黒の番です" : "白の番です";
+            // 
+            // }
 
             // 両方置けなければゲーム終了
             if (!board.isiOkeruka('黒') && !board.isiOkeruka('白'))
@@ -113,7 +138,6 @@ namespace _2025_kaihatu_kanno
                 {
                     GameRestart();
                 }
-
             }
 
         }
@@ -145,19 +169,22 @@ namespace _2025_kaihatu_kanno
         {
             // プレイヤー交代
             board.Player = (board.Player == '黒') ? '白' : '黒';
-
+        
             // 回数のカウント
             kaisu = (kaisu + 1);
             label2.Text = string.Format("{0}回目", kaisu);
-
+        
             // ラベルの文字変える
             label1.Text = board.Player == '黒' ? "黒の番です" : "白の番です";
+
+            // 米印をだす
+            label4.Text = "※パスされました(._.)";
 
             // 両方置けなければゲーム終了
             if (!board.isiOkeruka('黒') && !board.isiOkeruka('白'))
             {
                 string result = board.Winner();
-
+        
                 DialogResult dialogResult = MessageBox.
                     Show(result, "ゲーム終了", MessageBoxButtons.RetryCancel);
                 
@@ -166,7 +193,7 @@ namespace _2025_kaihatu_kanno
                 {
                     GameRestart();
                 }
-
+        
             }
         }
 
@@ -205,8 +232,9 @@ namespace _2025_kaihatu_kanno
         { }
 
         private void labelWhite_Click(object sender, EventArgs e)
-        {
+        { }
 
-        }
+        private void label4_Click_1(object sender, EventArgs e)
+        { }
     }
 }
